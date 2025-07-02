@@ -48,7 +48,7 @@ export default function HomeScreen() {
   };
 
   useEffect(() => {
-    if (isConnected) {
+    if (isConnected && signer) {
       const client = createSmartWalletClient({
         transport: alchemy(transport),
         chain,

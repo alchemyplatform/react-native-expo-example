@@ -5,8 +5,9 @@
     "paths": {
       "@/*": ["./*"]
     },
-    "module": "NodeNext",
-    "moduleResolution": "nodenext"
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx"
   },
   "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]
 }
