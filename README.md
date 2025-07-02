@@ -10,9 +10,9 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
    npm install
    ```
 1. Run a prebuild
-```bash
-npx expo prebuild 
-```
+   ```bash
+   npx expo prebuild 
+   ```
 
 1. Start the app
 
