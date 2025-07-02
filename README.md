@@ -9,10 +9,15 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
    ```bash
    npm install
    ```
+
 1. Run a prebuild
    ```bash
    npx expo prebuild 
    ```
+
+1. Get an API Key for Alchemy following [this guide](https://www.alchemy.com/docs/wallets/react-native/signer/setup-guide)
+
+1. Copy the `.env.example` > `.env` and paste the API Key you got in the above step there
 
 1. Start the app
 
