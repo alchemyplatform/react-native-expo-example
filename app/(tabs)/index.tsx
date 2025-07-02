@@ -1,75 +1,168 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
-
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+import { alchemy } from "@account-kit/infra";
+import {
+  useAuthenticate,
+  useConnection,
+  useLogout,
+  useSigner,
+  useSignerStatus,
+  useUser,
+} from "@account-kit/react-native";
+import {
+  createSmartWalletClient,
+  type SmartWalletClient,
+} from "@account-kit/wallet-client";
+import { useEffect, useState } from "react";
+import {
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import { Hex } from "viem";
 
 export default function HomeScreen() {
+  const { authenticateAsync } = useAuthenticate();
+  const { isConnected } = useSignerStatus();
+  const [smartWallet, setSmartWallet] = useState<SmartWalletClient>();
+  const signer = useSigner();
+  const [email, setEmail] = useState<string>("");
+  const user = useUser();
+  const [signerAddress, setSignerAddress] = useState<string | null>(null);
+  const { logout } = useLogout();
+  const [awaitingOtp, setAwaitingOtp] = useState<boolean>(false);
+  const [otpCode, setOtpCode] = useState<string>("");
+  const [address, setAddress] = useState<Hex | null>(null);
+  const { transport, chain } = useConnection();
+
+  const handleUserAuth = ({ code }: { code: string }) => {
+    setAwaitingOtp(false);
+
+    authenticateAsync({
+      otpCode: code,
+      type: "otp",
+    }).catch(console.error);
+
+    // Clear the OTP code after authentication
+    setOtpCode("");
+  };
+
+  useEffect(() => {
+    if (isConnected) {
+      const client = createSmartWalletClient({
+        transport: alchemy(transport),
+        chain,
+        signer,
+        mode: "local",
+      });
+      setSmartWallet(client);
+      client.requestAccount().then((account) => {
+        setAddress(account.address);
+      });
+    }
+  }, [isConnected, signer]);
+
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+    <View style={styles.container}>
+      {awaitingOtp ? (
+        <>
+          <TextInput
+            style={styles.textInput}
+            placeholderTextColor="gray"
+            placeholder="enter your OTP code"
+            onChangeText={setOtpCode}
+            value={otpCode}
+          />
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => handleUserAuth({ code: otpCode })}
+          >
+            <Text style={styles.buttonText}>Sign in</Text>
+          </TouchableOpacity>
+        </>
+      ) : !user ? (
+        <>
+          <TextInput
+            style={styles.textInput}
+            placeholderTextColor="gray"
+            placeholder="enter your email"
+            onChangeText={setEmail}
+            value={email}
+          />
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => {
+              authenticateAsync({
+                email,
+                type: "email",
+              }).catch(console.error);
+
+              setAwaitingOtp(true);
+            }}
+          >
+            <Text style={styles.buttonText}>Sign in</Text>
+          </TouchableOpacity>
+        </>
+      ) : (
+        <>
+          <Text style={styles.userText}>
+            Currently logged in as: {user.email}
+          </Text>
+          <Text style={styles.userText}>OrgId: {user.orgId}</Text>
+          <Text style={styles.userText}>Signer Address: {signerAddress}</Text>
+          <Text style={styles.userText}>
+            Smart Account Address: {address ?? "loading..."}
+          </Text>
+
+          <TouchableOpacity style={styles.button} onPress={() => logout()}>
+            <Text style={styles.buttonText}>Sign out</Text>
+          </TouchableOpacity>
+        </>
+      )}
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#FFFFF",
+    paddingHorizontal: 20,
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+  textInput: {
+    width: "100%",
+    height: 40,
+    borderColor: "gray",
+    borderWidth: 1,
+    paddingHorizontal: 10,
+    backgroundColor: "rgba(0,0,0,0.05)",
+    marginTop: 20,
+    marginBottom: 10,
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  box: {
+    width: 60,
+    height: 60,
+    marginVertical: 20,
+  },
+  button: {
+    width: 200,
+    padding: 10,
+    height: 50,
+    backgroundColor: "rgb(147, 197, 253)",
+    borderRadius: 5,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 20,
+  },
+  buttonText: {
+    color: "white",
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+  userText: {
+    marginBottom: 10,
+    fontSize: 18,
   },
 });
