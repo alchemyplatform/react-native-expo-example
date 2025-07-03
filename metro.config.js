@@ -1,6 +1,7 @@
 // Learn more https://docs.expo.io/guides/customizing-metro
 const { getDefaultConfig } = require("expo/metro-config");
 const path = require("path");
+const fs = require("fs");
 const projectRoot = __dirname;
 
 // Add aliases for file-system import based modules
@@ -24,12 +25,35 @@ config.resolver.extraNodeModules = {
 };
 
 config.resolver.resolveRequest = (context, moduleName, platform) => {
+  // Handle aliases first
   if (ALIASES[moduleName]) {
     return {
       filePath: ALIASES[moduleName],
       type: "sourceFile",
     };
   }
+
+  // Handle .js/.jsx extensions on TypeScript files
+  if (
+    (moduleName.startsWith(".") || moduleName.startsWith("/")) &&
+    (moduleName.endsWith(".js") || moduleName.endsWith(".jsx"))
+  ) {
+    const moduleFilePath = path.resolve(
+      context.originModulePath,
+      "..",
+      moduleName
+    );
+
+    // if the file exists, we won't remove extension, and we'll fall back to normal resolution.
+    if (!fs.existsSync(moduleFilePath)) {
+      return context.resolveRequest(
+        context,
+        moduleName.replace(/\.[^/.]+$/, ""),
+        platform
+      );
+    }
+  }
+
   return context.resolveRequest(context, moduleName, platform);
 };
 

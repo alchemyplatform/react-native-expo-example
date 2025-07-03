@@ -16,7 +16,7 @@
     "@account-kit/react-native": "^4.48.0",
     "@account-kit/react-native-signer": "^4.48.0",
     "@account-kit/smart-contracts": "^4.48.0",
-    "@account-kit/wallet-client": "^0.1.0-alpha.9",
+    "@account-kit/wallet-client": "^0.1.0-alpha.10",
     "@expo/vector-icons": "^14.1.0",
     "@react-navigation/bottom-tabs": "^7.3.10",
     "@react-navigation/elements": "^2.3.8",
