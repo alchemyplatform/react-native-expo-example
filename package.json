@@ -11,11 +11,11 @@
     "lint": "expo lint"
   },
   "dependencies": {
-    "@account-kit/infra": "^4.48.0",
-    "@account-kit/react": "^4.48.0",
-    "@account-kit/react-native": "^4.48.0",
-    "@account-kit/react-native-signer": "^4.48.0",
-    "@account-kit/smart-contracts": "^4.48.0",
+    "@account-kit/infra": "^4.49.0",
+    "@account-kit/react": "^4.49.0",
+    "@account-kit/react-native": "^4.49.0",
+    "@account-kit/react-native-signer": "^4.49.0",
+    "@account-kit/smart-contracts": "^4.49.0",
     "@account-kit/wallet-client": "^0.1.0-alpha.10",
     "@expo/vector-icons": "^14.1.0",
     "@react-navigation/bottom-tabs": "^7.3.10",
@@ -53,7 +53,8 @@
     "stream-browserify": "^3.0.0",
     "viem": "2.29.2",
     "wagmi": "^2.15.6",
-    "zustand": "^5.0.5"
+    "zustand": "^5.0.5",
+    "expo-crypto": "~14.1.5"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
@@ -62,5 +63,6 @@
     "eslint-config-expo": "~9.2.0",
     "typescript": "~5.8.3"
   },
-  "private": true
+  "private": true,
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }

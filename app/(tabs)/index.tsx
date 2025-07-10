@@ -1,3 +1,4 @@
+import SolanaTxn from "@/components/SolanaTxn";
 import { alchemy } from "@account-kit/infra";
 import {
   useAuthenticate,
@@ -28,7 +29,6 @@ export default function HomeScreen() {
   const signer = useSigner();
   const [email, setEmail] = useState<string>("");
   const user = useUser();
-  const [signerAddress, setSignerAddress] = useState<string | null>(null);
   const { logout } = useLogout();
   const [awaitingOtp, setAwaitingOtp] = useState<boolean>(false);
   const [otpCode, setOtpCode] = useState<string>("");
@@ -109,11 +109,10 @@ export default function HomeScreen() {
             Currently logged in as: {user.email}
           </Text>
           <Text style={styles.userText}>OrgId: {user.orgId}</Text>
-          <Text style={styles.userText}>Signer Address: {signerAddress}</Text>
           <Text style={styles.userText}>
             Smart Account Address: {address ?? "loading..."}
           </Text>
-
+          <SolanaTxn />
           <TouchableOpacity style={styles.button} onPress={() => logout()}>
             <Text style={styles.buttonText}>Sign out</Text>
           </TouchableOpacity>
