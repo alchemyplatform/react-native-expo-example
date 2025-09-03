@@ -11,11 +11,11 @@
     "lint": "expo lint"
   },
   "dependencies": {
-    "@account-kit/infra": "^4.49.0",
-    "@account-kit/react": "^4.49.0",
-    "@account-kit/react-native": "^4.49.0",
-    "@account-kit/react-native-signer": "^4.49.0",
-    "@account-kit/smart-contracts": "^4.49.0",
+    "@account-kit/infra": "^4.60.0",
+    "@account-kit/react": "^4.60.0",
+    "@account-kit/react-native": "^4.60.0",
+    "@account-kit/react-native-signer": "^4.60.0",
+    "@account-kit/smart-contracts": "^4.60.0",
     "@account-kit/wallet-client": "^0.1.0-alpha.10",
     "@expo/vector-icons": "^14.1.0",
     "@react-navigation/bottom-tabs": "^7.3.10",
@@ -27,6 +27,7 @@
     "expo-blur": "~14.1.5",
     "expo-build-properties": "~0.14.6",
     "expo-constants": "~17.1.6",
+    "expo-crypto": "^14.1.5",
     "expo-font": "~13.3.1",
     "expo-haptics": "~14.1.4",
     "expo-image": "~2.4.0",
@@ -45,6 +46,7 @@
     "react-native-get-random-values": "^1.11.0",
     "react-native-inappbrowser-reborn": "^3.7.0",
     "react-native-mmkv": "^3.3.0",
+    "react-native-passkey": "^3.1.0",
     "react-native-reanimated": "~3.17.4",
     "react-native-safe-area-context": "5.4.0",
     "react-native-screens": "~4.11.1",
@@ -52,9 +54,7 @@
     "react-native-webview": "13.13.5",
     "stream-browserify": "^3.0.0",
     "viem": "2.29.2",
-    "wagmi": "^2.15.6",
-    "zustand": "^5.0.5",
-    "expo-crypto": "~14.1.5"
+    "wagmi": "^2.15.6"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
