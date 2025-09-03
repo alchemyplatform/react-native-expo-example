@@ -16,17 +16,26 @@
     eventemitter3 "^5.0.1"
     zod "^3.22.4"
 
-"@account-kit/core@^4.59.1":
-  version "4.59.1"
-  resolved "https://registry.yarnpkg.com/@account-kit/core/-/core-4.59.1.tgz#a836f9cd389c756c22f0f0581118c8acf029ba27"
-  integrity sha512-y8e2icaTRKwBA/p93y8NGMkje+l672qMlmYiRjkOK3HRwyEBMx14uokfEniG57l6b6zefNRt7+DCbncNf+Wv7w==
+"@aa-sdk/core@^4.60.0":
+  version "4.60.0"
+  resolved "https://registry.yarnpkg.com/@aa-sdk/core/-/core-4.60.0.tgz#f08c122c41d78702e6a8075613a737798516edbd"
+  integrity sha512-1XCcQDn04jY69k3hW7zAWzgDgG9HNDZttkM6L4X49N5AdX9ml6dgmBV0zzTmE+uB97L3Cs9XRharru/1B2QqnQ==
   dependencies:
-    "@account-kit/infra" "^4.59.1"
-    "@account-kit/logging" "^4.59.1"
-    "@account-kit/react-native-signer" "^4.59.1"
-    "@account-kit/signer" "^4.59.1"
-    "@account-kit/smart-contracts" "^4.59.1"
-    "@account-kit/wallet-client" "^4.59.1"
+    abitype "^0.8.3"
+    eventemitter3 "^5.0.1"
+    zod "^3.22.4"
+
+"@account-kit/core@^4.60.0":
+  version "4.60.0"
+  resolved "https://registry.yarnpkg.com/@account-kit/core/-/core-4.60.0.tgz#74600d6c3fee7f0649c8a0a9ac1c0e03e17fbe48"
+  integrity sha512-CueGJAgxbZw/Tfuaupmc6Xp+936NYpPutz7NUuc8VmtWvgFVGKjC3fcAyX/Cp2HrkzfQtwLeo6M4JELmrzc7oA==
+  dependencies:
+    "@account-kit/infra" "^4.60.0"
+    "@account-kit/logging" "^4.60.0"
+    "@account-kit/react-native-signer" "^4.60.0"
+    "@account-kit/signer" "^4.60.0"
+    "@account-kit/smart-contracts" "^4.60.0"
+    "@account-kit/wallet-client" "^4.60.0"
     "@solana/web3.js" "^1.98.0"
     js-cookie "^3.0.5"
     zod "^3.22.4"
@@ -34,13 +43,25 @@
   optionalDependencies:
     alchemy-sdk "^3.0.0"
 
-"@account-kit/infra@^4.43.1", "@account-kit/infra@^4.49.0", "@account-kit/infra@^4.59.1":
+"@account-kit/infra@^4.43.1", "@account-kit/infra@^4.59.1":
   version "4.59.1"
   resolved "https://registry.yarnpkg.com/@account-kit/infra/-/infra-4.59.1.tgz#46cc5aef5fb5c0b970a4ba09111088d43cd46f2e"
   integrity sha512-Z84Gia0D2wE//BEpMUVUIs5lnLQ4gLgzTzWYBcBAy6GuHec/XUH7QElnlhfL+/poN4/VwIDcM2zwykHT9cNVLg==
   dependencies:
     "@aa-sdk/core" "^4.59.1"
     "@account-kit/logging" "^4.59.1"
+    eventemitter3 "^5.0.1"
+    zod "^3.22.4"
+  optionalDependencies:
+    alchemy-sdk "^3.0.0"
+
+"@account-kit/infra@^4.60.0":
+  version "4.60.0"
+  resolved "https://registry.yarnpkg.com/@account-kit/infra/-/infra-4.60.0.tgz#4e2ec8bccf5480ebce9679ddf88a3c0c5300bdc9"
+  integrity sha512-45PTX0lIiuBKJiNZO9OzauMYBqFSkttS0y3KYrT9hTm1IXRzqdGpWm1l0e9E85O1ZKF/IgjGMytwo+XBWJEqFA==
+  dependencies:
+    "@aa-sdk/core" "^4.60.0"
+    "@account-kit/logging" "^4.60.0"
     eventemitter3 "^5.0.1"
     zod "^3.22.4"
   optionalDependencies:
@@ -54,27 +75,35 @@
     "@segment/analytics-next" "1.74.0"
     uuid "^11.0.2"
 
-"@account-kit/react-native-signer@^4.49.0", "@account-kit/react-native-signer@^4.59.1":
-  version "4.59.1"
-  resolved "https://registry.yarnpkg.com/@account-kit/react-native-signer/-/react-native-signer-4.59.1.tgz#beaeae4e7534d9729bdf1ce338ec8ce820b09c9f"
-  integrity sha512-17XoweFdSGSdSVDL8IsNqn0AmsEr49RH2Q/vBENQPjoMVH+6K+ManuooDJB26LAln2aXJVYRLyfzpUpM7z9xhQ==
+"@account-kit/logging@^4.60.0":
+  version "4.60.0"
+  resolved "https://registry.yarnpkg.com/@account-kit/logging/-/logging-4.60.0.tgz#61ac1e60f81d82c4b33a7e09e034341bcfcf7819"
+  integrity sha512-4ocy7PYGOGIVOYPUmcSVOxFXKLpoD9Uke0wn78lXwsw3hOzt7mne5OGzi/TnXBnnc4kDd+4PqmJ55H2s+QzEAA==
   dependencies:
-    "@aa-sdk/core" "^4.59.1"
-    "@account-kit/signer" "^4.59.1"
+    "@segment/analytics-next" "1.74.0"
+    uuid "^11.0.2"
+
+"@account-kit/react-native-signer@^4.60.0":
+  version "4.60.0"
+  resolved "https://registry.yarnpkg.com/@account-kit/react-native-signer/-/react-native-signer-4.60.0.tgz#f5b146a4918f19e0ad3ed38eb11ed4c1c9fc4f7e"
+  integrity sha512-5uCeILvIGUBUFdZBy7H8h7B9g7mM+zHr04N0w/ZGVZyGQhR4yOXlhHbBoX63Fs+lm/SdX6MUASvGmn1eMkP2kg==
+  dependencies:
+    "@aa-sdk/core" "^4.60.0"
+    "@account-kit/signer" "^4.60.0"
     "@turnkey/react-native-passkey-stamper" "^1.0.14"
     uuid "^11.1.0"
     viem "^2.29.2"
 
-"@account-kit/react-native@^4.49.0":
-  version "4.59.1"
-  resolved "https://registry.yarnpkg.com/@account-kit/react-native/-/react-native-4.59.1.tgz#98a20186561e9d12cedeab28bb198fc764c6466d"
-  integrity sha512-SvIz5E4aDggrZG3+dl78Tabs2da0jkuBGWNb8pLVgZhlVvfzzsWBASpiM2h5CoDdlO0IKzZoE8Ofay6bB/pA8A==
+"@account-kit/react-native@^4.60.0":
+  version "4.60.0"
+  resolved "https://registry.yarnpkg.com/@account-kit/react-native/-/react-native-4.60.0.tgz#6492521d49f415f859262120ce3b610256603b6e"
+  integrity sha512-vIeZebN+lUi/yYGO9GPYtbidEC0S6XBt9Mg5csio5ssnK/rIi+Hhep5BjdYVzOAcS6Ag419DX4OkoNDwFghT9A==
   dependencies:
-    "@account-kit/core" "^4.59.1"
-    "@account-kit/infra" "^4.59.1"
-    "@account-kit/react" "^4.59.1"
-    "@account-kit/react-native-signer" "^4.59.1"
-    "@account-kit/signer" "^4.59.1"
+    "@account-kit/core" "^4.60.0"
+    "@account-kit/infra" "^4.60.0"
+    "@account-kit/react" "^4.60.0"
+    "@account-kit/react-native-signer" "^4.60.0"
+    "@account-kit/signer" "^4.60.0"
     "@noble/hashes" "1.7.1"
     crypto-browserify "^3.12.1"
     node-libs-react-native "^1.2.1"
@@ -82,16 +111,16 @@
     stream-browserify "^3.0.0"
     zustand "^5.0.0-rc.2"
 
-"@account-kit/react@^4.49.0", "@account-kit/react@^4.59.1":
-  version "4.59.1"
-  resolved "https://registry.yarnpkg.com/@account-kit/react/-/react-4.59.1.tgz#7aa8a8ed39bf2e9f13f7030a9cff3401098dc410"
-  integrity sha512-rMG5k7zLzl3qInLtqQu5nbP9L7Y8IIX7SkV7s2UIo7czhLuPBluCirTuBdpqpb7T/9nh4i52yHtzKUBWM/DBFQ==
+"@account-kit/react@^4.60.0":
+  version "4.60.0"
+  resolved "https://registry.yarnpkg.com/@account-kit/react/-/react-4.60.0.tgz#8bf23d60b02638a020446a87530d3bb09057e352"
+  integrity sha512-1iSjWgrY1EKBjwANtORVlIFDWR/OO67fmNyTq5+SXR/DGWbcNdAgw1lBRJnp0GwPc9lXWib0OMKuvA6U1doDlA==
   dependencies:
-    "@account-kit/core" "^4.59.1"
-    "@account-kit/infra" "^4.59.1"
-    "@account-kit/logging" "^4.59.1"
-    "@account-kit/signer" "^4.59.1"
-    "@account-kit/wallet-client" "^4.59.1"
+    "@account-kit/core" "^4.60.0"
+    "@account-kit/infra" "^4.60.0"
+    "@account-kit/logging" "^4.60.0"
+    "@account-kit/signer" "^4.60.0"
+    "@account-kit/wallet-client" "^4.60.0"
     "@solana/wallet-adapter-react" "^0.15.39"
     "@solana/wallet-adapter-wallets" "^0.19.37"
     "@solana/web3.js" "^1.98.0"
@@ -105,13 +134,13 @@
   optionalDependencies:
     alchemy-sdk "^3.0.0"
 
-"@account-kit/signer@^4.59.1":
-  version "4.59.1"
-  resolved "https://registry.yarnpkg.com/@account-kit/signer/-/signer-4.59.1.tgz#eb959bc42f7696a35315ec3daa256333c7dc8a5b"
-  integrity sha512-RmSuKDH+xjyK3Sg1iNgUJJJlGoYWa00rCNjY6cUQSYO4ps+Gfujjs1y9Lon/lb+Jefnu7aJV9yufgGTKZ3njHQ==
+"@account-kit/signer@^4.60.0":
+  version "4.60.0"
+  resolved "https://registry.yarnpkg.com/@account-kit/signer/-/signer-4.60.0.tgz#97128c0cfd87adba3ae11cf491975278cf7a9c25"
+  integrity sha512-Lg+U3UaiXpY5JJKi9TE8aeEDTjIOXNMrr60rQ7M0auMdR9uGphQwcF5IUHFYmPXTPQG8QtFYPlm5olYb906awA==
   dependencies:
-    "@aa-sdk/core" "^4.59.1"
-    "@account-kit/logging" "^4.59.1"
+    "@aa-sdk/core" "^4.60.0"
+    "@account-kit/logging" "^4.60.0"
     "@noble/curves" "^1.9.2"
     "@noble/hashes" "1.7.1"
     "@noble/secp256k1" "^2.3.0"
@@ -125,13 +154,22 @@
     zod "^3.22.4"
     zustand "^5.0.0-rc.2"
 
-"@account-kit/smart-contracts@^4.43.1", "@account-kit/smart-contracts@^4.49.0", "@account-kit/smart-contracts@^4.59.1":
+"@account-kit/smart-contracts@^4.43.1":
   version "4.59.1"
   resolved "https://registry.yarnpkg.com/@account-kit/smart-contracts/-/smart-contracts-4.59.1.tgz#650a56de74c192d5b242554d580dbb28a5a74620"
   integrity sha512-u5r+04L1KjnoU9sPgNMs2AM6SWx83nUbo7VBMFfW/26VmGAvQqjyzHzf4j0CrS4DtVPJXn+yGg3nPxd7Feo6+g==
   dependencies:
     "@aa-sdk/core" "^4.59.1"
     "@account-kit/infra" "^4.59.1"
+    webauthn-p256 "^0.0.10"
+
+"@account-kit/smart-contracts@^4.60.0":
+  version "4.60.0"
+  resolved "https://registry.yarnpkg.com/@account-kit/smart-contracts/-/smart-contracts-4.60.0.tgz#183fc95451469eb735f11a3e7485cd5c6c42213b"
+  integrity sha512-HREXn/m8T78xoTuwhtW02c/4V5kw/pLMUM4msxj7ap+fM7GVzorNAMRvQNuZP3GEcv8aUit2Ga9RhPWiS9C4fg==
+  dependencies:
+    "@aa-sdk/core" "^4.60.0"
+    "@account-kit/infra" "^4.60.0"
     webauthn-p256 "^0.0.10"
 
 "@account-kit/wallet-client@^0.1.0-alpha.10":
@@ -148,14 +186,14 @@
     ox "^0.6.12"
     viem "2.29.2"
 
-"@account-kit/wallet-client@^4.59.1":
-  version "4.59.1"
-  resolved "https://registry.yarnpkg.com/@account-kit/wallet-client/-/wallet-client-4.59.1.tgz#14ee360c3142989465763e90c9f5994716484e03"
-  integrity sha512-2VWrU3Do0q+12OB1ctmMO1QJeUv4HqGZU0I6rs7kB7192eZol37mK4dGPqT1scd0E229PIQgZYQtCfuRLLkQEg==
+"@account-kit/wallet-client@^4.60.0":
+  version "4.60.0"
+  resolved "https://registry.yarnpkg.com/@account-kit/wallet-client/-/wallet-client-4.60.0.tgz#5eded67a70e0c58f22905774b81ea910b553ba1c"
+  integrity sha512-nqfeY3TLZ5A0gMZRfO2+aBrgGKcEN6bE2Olt2oTMcda0gTbpxMSEq/i2VWBoGMLG2sc3eN/tTcAzCcpI5i5mBg==
   dependencies:
-    "@aa-sdk/core" "^4.59.1"
-    "@account-kit/infra" "^4.59.1"
-    "@account-kit/smart-contracts" "^4.59.1"
+    "@aa-sdk/core" "^4.60.0"
+    "@account-kit/infra" "^4.60.0"
+    "@account-kit/smart-contracts" "^4.60.0"
     "@alchemy/wallet-api-types" "0.1.0-alpha.16"
     deep-equal "^2.2.3"
     ox "^0.6.12"
@@ -6286,15 +6324,15 @@ abitype@1.0.8:
   resolved "https://registry.yarnpkg.com/abitype/-/abitype-1.0.8.tgz#3554f28b2e9d6e9f35eb59878193eabd1b9f46ba"
   integrity sha512-ZeiI6h3GnW06uYDLx0etQtX/p8E24UaHHBj57RSjK7YBFe7iuVn07EDpOeP451D06sF27VOz9JJPlIKJmXgkEg==
 
+abitype@1.1.0, abitype@^1.0.6, abitype@^1.0.9:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/abitype/-/abitype-1.1.0.tgz#510c5b3f92901877977af5e864841f443bf55406"
+  integrity sha512-6Vh4HcRxNMLA0puzPjM5GBgT4aAcFGKZzSgAXvuZ27shJP6NEpielTuqbBmZILR5/xd0PizkBGy5hReKz9jl5A==
+
 abitype@^0.8.3:
   version "0.8.11"
   resolved "https://registry.yarnpkg.com/abitype/-/abitype-0.8.11.tgz#66e1cf2cbf46f48d0e57132d7c1c392447536cc1"
   integrity sha512-bM4v2dKvX08sZ9IU38IN5BKmN+ZkOSd2oI4a9f0ejHYZQYV6cDr7j+d95ga0z2XHG36Y4jzoG5Z7qDqxp7fi/A==
-
-abitype@^1.0.6, abitype@^1.0.9:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/abitype/-/abitype-1.1.0.tgz#510c5b3f92901877977af5e864841f443bf55406"
-  integrity sha512-6Vh4HcRxNMLA0puzPjM5GBgT4aAcFGKZzSgAXvuZ27shJP6NEpielTuqbBmZILR5/xd0PizkBGy5hReKz9jl5A==
 
 abort-controller@^3.0.0:
   version "3.0.0"
@@ -8782,7 +8820,7 @@ expo-constants@~17.1.6, expo-constants@~17.1.7:
     "@expo/config" "~11.0.12"
     "@expo/env" "~1.0.7"
 
-expo-crypto@~14.1.5:
+expo-crypto@^14.1.5:
   version "14.1.5"
   resolved "https://registry.yarnpkg.com/expo-crypto/-/expo-crypto-14.1.5.tgz#1c29ddd4657d96af6358a9ecdc85a0c344c9ae0c"
   integrity sha512-ZXJoUMoUeiMNEoSD4itItFFz3cKrit6YJ/BR0hjuwNC+NczbV9rorvhvmeJmrU9O2cFQHhJQQR1fjQnt45Vu4Q==
@@ -12295,6 +12333,11 @@ react-native-passkey@3.0.0:
   resolved "https://registry.yarnpkg.com/react-native-passkey/-/react-native-passkey-3.0.0.tgz#f81255bca91c0b64b4dc940df9b4f5b53d4131c2"
   integrity sha512-U26Jaz8BeN+LxB9a5rwJiDHIYNBj7sobfnlQnkfyuqylKnSHxzThOnYcJq3WGCSzTYNI5DT0xUtArQkc482fkQ==
 
+react-native-passkey@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-passkey/-/react-native-passkey-3.1.0.tgz#26617ed0cc115c6037e2537d264955d852395168"
+  integrity sha512-qOJ0q7AqbUOGXDOObcfiOJo1BOnG+lIQMEgltgeqmyMC+2XDlr7YrOQZgLwZbXheGC7BXPpwMSev/gxkgbt3xw==
+
 react-native-quick-base64@2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/react-native-quick-base64/-/react-native-quick-base64-2.1.2.tgz#062b09b165c1530095fe99b94544c948318dbe99"
@@ -14298,15 +14341,15 @@ viem@2.29.2:
     ws "8.18.1"
 
 viem@>=2.23.11, viem@>=2.29.0, viem@^2.1.1, viem@^2.27.2, viem@^2.29.2, viem@^2.31.7:
-  version "2.37.1"
-  resolved "https://registry.yarnpkg.com/viem/-/viem-2.37.1.tgz#7ca3e5f172abe7138f271fcb9d7698b52050e8ba"
-  integrity sha512-IzacdIXYlOvzDJwNKIVa53LP/LaP70qvBGAIoGH6R+n06S/ru/nnQxLNZ6+JImvIcxwNwgAl0jUA6FZEIQQWSw==
+  version "2.37.2"
+  resolved "https://registry.yarnpkg.com/viem/-/viem-2.37.2.tgz#4eae5693862f8de65eff15f34faaea542b271ab8"
+  integrity sha512-soXSUhPEnHzXVo1sSFg2KiUUwOTCtqGNnR/NOHr+4vZcbM6sTyS62asg9EfDpaJQFNduRQituxTcflaK6OIaPA==
   dependencies:
     "@noble/curves" "1.9.1"
     "@noble/hashes" "1.8.0"
     "@scure/bip32" "1.7.0"
     "@scure/bip39" "1.6.0"
-    abitype "1.0.8"
+    abitype "1.1.0"
     isows "1.0.7"
     ox "0.9.3"
     ws "8.18.3"
@@ -14756,7 +14799,7 @@ zustand@5.0.3:
   resolved "https://registry.yarnpkg.com/zustand/-/zustand-5.0.3.tgz#b323435b73d06b2512e93c77239634374b0e407f"
   integrity sha512-14fwWQtU3pH4dE0dOpdMiWjddcH+QzKIgk1cl8epwSE7yag43k/AD/m4L6+K7DytAOr9gGBe3/EXj9g7cdostg==
 
-zustand@^5.0.0-rc.2, zustand@^5.0.5:
+zustand@^5.0.0-rc.2:
   version "5.0.8"
   resolved "https://registry.yarnpkg.com/zustand/-/zustand-5.0.8.tgz#b998a0c088c7027a20f2709141a91cb07ac57f8a"
   integrity sha512-gyPKpIaxY9XcO2vSMrLbiER7QMAMGOQZVRdJ6Zi782jkbzZygq5GI9nG8g+sMgitRtndwaBSl7uiqC49o1SSiw==

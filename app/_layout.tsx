@@ -43,6 +43,7 @@ const config = createConfig({
     ),
     policyId: process.env.EXPO_PUBLIC_SOLANA_SPONSORSHIP_POLICY, // Optional - gas/rent sponsorship policy ID: https://dashboard.alchemy.com/gas-manager
   },
+  rpId: "wallets-example.florrdv.workers.dev", // Your domain for passkey support
 });
 
 const queryClient = new QueryClient();

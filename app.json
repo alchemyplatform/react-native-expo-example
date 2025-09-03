@@ -10,7 +10,10 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.moldy530.testfreshapp2"
+      "bundleIdentifier": "com.moldy530.testfreshapp2",
+      "associatedDomains": [
+        "webcredentials:wallets-example.florrdv.workers.dev"
+      ]
     },
     "android": {
       "adaptiveIcon": {

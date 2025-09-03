@@ -44,6 +44,15 @@ export default function TabLayout() {
           ),
         }}
       />
+      <Tabs.Screen
+        name="passkey"
+        options={{
+          title: "Passkey",
+          tabBarIcon: ({ color }) => (
+            <IconSymbol size={28} name="faceid" color={color} />
+          ),
+        }}
+      />
     </Tabs>
   );
 }
