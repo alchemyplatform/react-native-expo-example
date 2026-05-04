@@ -52,7 +52,7 @@
     "react-native-webview": "13.13.5",
     "stream-browserify": "^3.0.0",
     "viem": "2.29.2",
-    "wagmi": "^2.15.6",
+    "wagmi": "3.0.0",
     "zustand": "^5.0.5",
     "expo-crypto": "~14.1.5"
   },
